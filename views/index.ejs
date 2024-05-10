@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Astronomy Picture of the Day</title>
+    <link rel="stylesheet" href="styles/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <h1 class="main-title">Astronomy Picture Of The Day</h1>
+    <div class="white-box1"><div class="black-box1"></div></div>
+    <div class="white-box2"><div class="black-box2"></div></div>
+    <div class="white-box3"><div class="black-box3"></div></div>
+    <div class="white-box4"><div class="black-box4"></div></div>
+    <div class="container">
+        <div class="content">
+            <h3 class="content-title">
+                <%= title %>
+            </h3>
+            <p class="content-txt typing">
+                <%= date %><br/><br/><br/><%= explanation %>
+            </p>
+        </div>
+        <div class="img-container"><img class="img" src= <%= url %> /></div>
+    </div>
+    <footer>
+        <p class="copyright">© Sudhanva Bharadwaj, <%= new Date().getFullYear() %></p>
+    </footer>
+    <script src="https://unpkg.com/typeit@8.8.3/dist/index.umd.js"></script>
+    <script>
+        var txt = document.getElementsByClassName("content-txt")
+        new TypeIt(".typing", {
+            strings: txt[0][0],
+            speed: 20,
+            waitUntilVisible: true,
+        }).go();
+    </script>
+</body>
+</html>
